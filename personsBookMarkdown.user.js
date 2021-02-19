@@ -3,10 +3,10 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://www.personsbook.com/udemy-courses*
 // @grant       none
-// @version     1.5
+// @version     1.5.1
 // @author      gogvale
 // @description Logs to console a markdown with a list of course names of the current personsbook.com post
-// @license     GPL-3.0
+// @license     GPL
 // ==/UserScript==
 
 courseList = [...document.querySelectorAll('p>span')]
