@@ -5,7 +5,8 @@
 // @grant       none
 // @version     1.5
 // @author      gogvale
-// @description 2/19/2021, 4:46:25 PM
+// @description Logs to console a markdown with a list of course names of the current personsbook.com post
+// @license     GPL-3.0
 // ==/UserScript==
 
 courseList = [...document.querySelectorAll('p>span')]
