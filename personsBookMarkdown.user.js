@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://www.personsbook.com/udemy-courses*
 // @grant       none
-// @version     1.5.1
+// @version     1.5.2
 // @author      gogvale
 // @description Logs to console a markdown with a list of course names of the current personsbook.com post
 // @license     GPL
@@ -15,9 +15,10 @@ courseList = [...document.querySelectorAll('p>span')]
   .map(e=>/daily/i.test(e) ? null : e)
   .map(e=>/^http/.test(e) ? null : e)
   .map(e=>/^Get Followers/.test(e) ? null : e)
-  .map(e=>/Facebook|YouTube|Tiktok|Instagram/i.test(e) ? null : e)
-  .map(e=>/[^\x20-\x7E]+/.test(e)?  null : e)
-
+  .map(e=>/^How to get paid udemy courses/i.test(e) ? null : e)
+  .map(e=>/^World Persons and Online Courses Daily/i.test(e) ? null : e)
+  .map(e=>/Sign up now/i.test(e) ? null : e)
+  //.map(e=>/[^\x20-\x7E]+/.test(e)?  null : e)
   .filter(e=>e);
 
 courseList = [...new Set(courseList)].sort().map(e=>"- "+e) .join('\n')
