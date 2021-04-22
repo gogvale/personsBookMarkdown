@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://www.personsbook.com/udemy-courses*
 // @grant       none
-// @version     1.5.2
+// @version     1.5.3
 // @author      gogvale
 // @description Logs to console a markdown with a list of course names of the current personsbook.com post
 // @license     GPL
