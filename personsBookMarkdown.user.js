@@ -9,7 +9,7 @@
 // @license     GPL
 // ==/UserScript==
 
-courseList = [...document.querySelectorAll('p>span')]
+courseList = [...document.querySelectorAll('._1mf._1mj>span')]
   .map(e=>e.textContent)
   .map(e=>/^—+/.test(e) ? null : e)
   .map(e=>/daily/i.test(e) ? null : e)
