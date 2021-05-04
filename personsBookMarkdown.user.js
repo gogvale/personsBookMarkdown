@@ -9,7 +9,7 @@
 // @license     GPL
 // ==/UserScript==
 
-courseList = [...document.querySelectorAll('._1mf._1mj>span')]
+courseList = [...document.querySelectorAll('p>span')]
   .map(e=>e.textContent)
   .map(e=>/^—+/.test(e) ? null : e)
   .map(e=>/daily/i.test(e) ? null : e)
@@ -20,8 +20,9 @@ courseList = [...document.querySelectorAll('._1mf._1mj>span')]
   .map(e=>/Sign up now/i.test(e) ? null : e)
   //.map(e=>/[^\x20-\x7E]+/.test(e)?  null : e)
   .filter(e=>e);
+date = document.querySelector("h1.post-title>a").textContent.split(" – ")[1]
 
 courseList = [...new Set(courseList)].sort().map(e=>"- "+e) .join('\n')
-string = `**Cursos gratis del día (${new Date().toLocaleDateString("es-MX")})**\n${document.URL}\n` + "```markdown\n"+courseList+"\n```";
+string = `**Cursos gratis del día (${date})**\n${document.URL}\n` + "```markdown\n"+courseList+"\n```";
 
 console.log(string);
